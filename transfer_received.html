@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer Received</title>
+</head>
+<body style="background: #3d332a; font-family: 'Roboto', 'Noto', sans-serif">
+    <div style="height: 80px; width: 100%; background: #3d332a;">
+       <p style="text-align: center"><img src="https://qa-auth.payfind.net/elements/shop-to-shop-logo.png" alt="Shop to Shop logo" style="padding: 10px 0; height: 60px"/></p>
+    </div>
+    <div style="background:#fff">
+        <div  style="background:#f8f8f8; border-bottom: 1px solid #ccc">
+            <h3 style="text-align: center; padding: 10px 0 0 0;">Transfer Received</h3>
+        </div>
+        <div style="padding: 15px;">
+            <p>Transaction#: {{reference}}</p>
+            <p>Date/Time: {{dateTime}}</p>
+            <p>Account: {{account}}</p>   
+        </div>
+        <div style="padding:15px;">
+            <table width="100%">
+                <thead>
+                <tr>
+                    <th width="33%">Description</th>
+                    <th width="34%">Your Ref</th>
+                    <th width="33%">Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#entries}}
+                <tr>
+                    <td width="33%">{{description}}</td>
+                    <td width="34%">{{entryReference}}</td>
+                    <td width="33%">{{amount}}</td>
+                </tr>
+                {{/entries}}
+                <tr>
+                     <td width="33%">Total</td>
+                    <td width="34%"></td>
+                    <td width="33%">{{total}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="height: 40px; width: 100%; background: #3d332a; border-top: 4px solid #ccc"">
+        <p style="text-align: center; padding: 10px 0;"><a style="color:#fff; text-decoration: none;" href="https://shop.shoptoshop.co.za">ShopToShop</p>
+    </div>
+    </body>
+</html>

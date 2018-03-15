@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Statement</title>
+    </head>
+    <body style="background: #3d332a; font-family: 'Roboto', 'Noto', sans-serif">
+        <div style="height: 80px; width: 100%; background: #3d332a;">
+       <p style="text-align: center"><img src="https://qa-auth.payfind.net/elements/shop-to-shop-logo.png" alt="Shop to Shop logo" style="padding: 10px 0; height: 60px"/></p>
+    </div>
+
+    <div style="background-color:#fff">
+        <div  style="background:#f8f8f8; border-bottom: 1px solid #ccc">
+            <h3 style="text-align: center; padding: 10px 0 0 0;">{{#statements}}</h3>
+        </div>
+            <div style="padding:15px;">
+                <h3>Account #{{accountNumber}} - {{accountName}}</h3>
+                <h4>Statement from {{fromDate}} to {{toDate}}</h4>
+            </div>
+            <div style="padding: 15px;">
+            <table>
+                <thead>
+                <tr>
+                    <th width="20%">Ref#</th>
+                    <th width="20%">Description</th>
+                    <th width="20%">Your Ref</th>
+                    <th width="20%">Amount</th>
+                    <th width="20%">Balance</th>
+                    <th width="20%">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#entries}}
+                    <tr>
+                        <td width="20%">{{reference}}</td>
+                        <td width="20%">{{description}}</td>
+                        <td width="20%">{{entryReference}}</td>
+                        <td width="20%">{{amount}}</td>
+                        <td width="20%">{{balance}}</td>
+                        <td width="20%">{{date}}</td>
+                    </tr>
+                {{/entries}}
+                </tbody>
+            </table>
+            {{/statements}}
+            </div>
+        </div>
+         <div style="height: 40px; width: 100%; background: #3d332a; border-top: 4px solid #ccc"">
+            <p style="text-align: center; padding: 10px 0;"><a style="color:#fff; text-decoration: none;" href="https://shop.shoptoshop.com">ShopToShop</p>
+        </div>
+    </body>
+</html>
