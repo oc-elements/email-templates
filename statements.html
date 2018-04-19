@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statements</title>
+    <style>
+    td, th {
+        padding-right:20px;
+    }
+</style>
+</head>
+<body style="background: #3d332a; font-family: 'Roboto', 'Noto', sans-serif">
+    <div style="height: 80px; width: 100%; background: #3d332a;">
+        <p style="text-align: center"><img src="https://qa-auth.payfind.net/elements/shop-to-shop-logo.png" alt="Shop to Shop logo" style="padding: 10px 0; height: 60px"/></p>
+    </div>
+    <div style="background-color:#fff">
+        <div  style="background:#f8f8f8; border-bottom: 1px solid #ccc">
+            <h3 style="text-align: center; padding: 10px 0 0 0;">Statements</h3>
+        </div>
+        {{for statement in statements}}
+        <div style="padding:15px;">
+            <h3>Account: {{statement.accountNumber}} - {{statement.accountName}}</h3>
+            <h4>Statement {{statement.fromDate}} {{statement.toDate}}</h4>
+        </div>
+        <div style="padding: 15px; font-size: 12px">
+            <table>
+                <thead>
+                <tr>
+                    <th width="10%" style="text-align: left">Transaction#</th>
+                    <th width="35%" style="text-align: left">Description</th>
+                    <th width="10%" style="text-align: left">Your Ref</th>
+                    <th width="12.5%" style="text-align: left">Amount</th>
+                    <th width="12.5%" style="text-align: left">Balance</th>
+                    <th width="20%" style="text-align: left">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{for entry in statement.entries}}
+                    <tr>
+                        <td width="10%">{{entry.transactionId}}</td>
+                        <td width="30%">{{entry.description}}</td>
+                        <td width="10%">{{entry.reference}}</td>
+                        <td width="12.5%">{{entry.amount}}</td>
+                        <td width="12.5%">{{entry.balance}}</td>
+                        <td width="20%">{{entry.date}}</td>
+                    </tr>
+                {{/for}}
+                </tbody>
+            </table>
+        </div>
+        {{/for}}
+    </div>
+    <div style="height: 40px; width: 100%; background: #3d332a; border-top: 4px solid #ccc">
+        <p style="text-align: center; padding: 10px 0;"><a style="color:#fff; text-decoration: none;" href="https://shop.shoptoshop.com"></a>ShopToShop</p>
+    </div>
+</body>
+</html>
